@@ -41,9 +41,7 @@ class DetectionVisualization:
 			image (Union[str, Image]): image to draw
 			axe (Axes): axe to draw on
 		"""
-		if isinstance(image, str):
-			# image is currently a path to an image
-			image = Image.open(image)
+		image = Image.open(image)
 		# resize the image to the visualization size
 		if image.height != self.vis_size[0] or image.width != self.vis_size[1]:
 			image = image.resize(self.vis_size, Image.ANTIALIAS)
